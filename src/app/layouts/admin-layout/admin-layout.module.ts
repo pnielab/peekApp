@@ -1,22 +1,22 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminLayoutRoutes } from './admin-layout.routing';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AdminLayoutRoutes } from "./admin-layout.routing";
+import { DashboardComponent } from "../../dashboard/dashboard.component";
+import { PADashboardComponent } from "../../pa-dashboard/pa-dashboard.component";
+import { TableListComponent } from "../../table-list/table-list.component";
+import { TypographyComponent } from "../../typography/typography.component";
+import { IconsComponent } from "../../icons/icons.component";
+import { MapsComponent } from "../../maps/maps.component";
+import { NotificationsComponent } from "../../notifications/notifications.component";
+import { UpgradeComponent } from "../../upgrade/upgrade.component";
 import { FusionChartsModule } from "angular-fusioncharts";
 import * as FusionCharts from "fusioncharts";
 import * as Charts from "fusioncharts/fusioncharts.charts";
-import * as PowerCharts from 'fusioncharts/fusioncharts.powercharts';
+import * as PowerCharts from "fusioncharts/fusioncharts.powercharts";
 import * as FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
-import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MaterialFileInputModule } from "ngx-material-file-input";
 
 import {
   MatButtonModule,
@@ -25,8 +25,8 @@ import {
   MatFormFieldModule,
   MatTooltipModule,
   MatSelectModule
-} from '@angular/material'; 
-import { MatIconModule } from '@angular/material';
+} from "@angular/material";
+import { MatIconModule } from "@angular/material";
 @NgModule({
   imports: [
     CommonModule,
@@ -41,18 +41,17 @@ import { MatIconModule } from '@angular/material';
     MatSelectModule,
     MatIconModule,
     MatTooltipModule,
-    FusionChartsModule.forRoot(FusionCharts,PowerCharts, Charts, FusionTheme)
+    FusionChartsModule.forRoot(FusionCharts, PowerCharts, Charts, FusionTheme)
   ],
   declarations: [
     DashboardComponent,
-    UserProfileComponent,
+    PADashboardComponent,
     TableListComponent,
     TypographyComponent,
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent,
+    UpgradeComponent
   ]
 })
-
 export class AdminLayoutModule {}

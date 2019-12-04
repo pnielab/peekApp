@@ -49,22 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="row mb-3">
-      <div class="col-md-12">
-        <fusioncharts
-          type="boxandwhisker2d"
-          width="100%"
-          [dataSource]="boxPlotDataSource"
-        >
-        </fusioncharts>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col-md-12">
-        <fusioncharts type="line" width="100%" [dataSource]="lineDataSource">
-        </fusioncharts>
-      </div>
-    </div>
+
     <div class="row mb-3">
       <div class="col-md-6">
         <div class="card">
@@ -107,5 +92,21 @@
         </div>
       </div>
     </div>
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <fusioncharts type="line" width="100%" [dataSource]="lineDataSource">
+        </fusioncharts>
+      </div>
+    </div>
+    <!-- <div class="row mb-3">
+      <div class="col-md-12">
+        <fusioncharts
+          type="boxandwhisker2d"
+          width="100%"
+          [dataSource]="boxPlotDataSource"
+        >
+        </fusioncharts>
+      </div>
+    </div> -->
   </div>
 </div>
