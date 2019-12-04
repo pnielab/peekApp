@@ -5,9 +5,22 @@
             "featureName": "",
             "errors": [
                 {
-                    "error":"e1",
-                    "date": "dd-MM-YYYY",
-                    "sum":15
+                    "errorName":"e1",
+                    "metaData": [
+                        {
+                            "date": "dd-MM-YYYY",
+                            "stackTrace": ""
+                        },
+                        {
+                            "date": "dd-MM-YYYY",
+                            "stackTrace": ""
+                        },
+                        {
+                            "date": "dd-MM-YYYY",
+                            "stackTrace": ""
+                        }
+                    ]
+                    
                 },
                 {
                     "error":"e2",
