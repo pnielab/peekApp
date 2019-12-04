@@ -11,10 +11,43 @@
     </div>
     <div class="row mb-3">
       <div class="col-md-6">
-        <fusioncharts type="pareto3d" [dataSource]="paretoDataSource">
-        </fusioncharts>
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Issues</h4>
+            <p class="card-category">Per product</p>
+          </div>
+          <div class="card-body">
+            <fusioncharts type="column2d" [dataSource]="paretoDataSource">
+            </fusioncharts>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Issues</h4>
+            <p class="card-category">Per product</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th *ngFor="let header of paretoTable.headers">
+                    {{ header }}
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of paretoTable.rows; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ product.product }}</td>
+                    <td>{{ product.sumOfIssues }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row mb-3">
       <div class="col-md-12">

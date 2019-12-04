@@ -19,6 +19,7 @@ import { issuesPerProduct } from "assets/mocks/issues-per-product";
 export class DashboardComponent {
   boxPlotDataSource: {};
   paretoDataSource: {};
+  paretoTable: {};
   lineDataSource: {};
   qualityPieChart: {};
   fileInputFormControl: FormControl;
@@ -28,6 +29,10 @@ export class DashboardComponent {
     this.fileInputFormControl = new FormControl();
     this.boxPlotDataSource = boxPlot;
     this.paretoDataSource = issuesPerProductMapper(issuesPerProduct);
+    this.paretoTable = {
+      rows: issuesPerProduct.issuesPerProduct,
+      headers: ["ID", "Product", "Issues"]
+    };
     this.qualityPieTable = {
       rows: qualityPieData.qualityPie,
       headers: ["ID", "Product", "Quality"]
