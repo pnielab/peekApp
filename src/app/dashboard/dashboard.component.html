@@ -17,7 +17,11 @@
             <p class="card-category">Per product</p>
           </div>
           <div class="card-body">
-            <fusioncharts type="column2d" [dataSource]="paretoDataSource">
+            <fusioncharts
+              type="column2d"
+              [dataSource]="paretoDataSource"
+              (dataplotClick)="update($event)"
+            >
             </fusioncharts>
           </div>
         </div>

@@ -1,25 +1,24 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
+import { RouterModule } from "@angular/router";
 
+import { AppRoutingModule } from "./app.routing";
+import { ComponentsModule } from "./components/components.module";
 
-import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
+import { AppComponent } from "./app.component";
 
-import { AppComponent } from './app.component';
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { PADashboardComponent } from "./pa-dashboard/pa-dashboard.component";
+import { TableListComponent } from "./table-list/table-list.component";
+import { TypographyComponent } from "./typography/typography.component";
+import { IconsComponent } from "./icons/icons.component";
+import { MapsComponent } from "./maps/maps.component";
+import { NotificationsComponent } from "./notifications/notifications.component";
+import { UpgradeComponent } from "./upgrade/upgrade.component";
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PADashboardComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
-
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 
 @NgModule({
   imports: [
@@ -29,14 +28,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     HttpModule,
     ComponentsModule,
     RouterModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent,
-
-  ],
+  declarations: [AppComponent, AdminLayoutComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

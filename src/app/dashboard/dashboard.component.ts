@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, NgZone } from "@angular/core";
 import { boxPlot } from "./charts/box-plot";
 import { FormControl } from "@angular/forms";
 import { qualityPieChartMapper } from "./charts/mappers/quality-pie.mapper";
@@ -10,6 +10,7 @@ import { numberOfIssuesData } from "assets/mocks/number-of-Issues";
 import { numberOfIssuesMapper } from "./charts/mappers/number-of-issues.mapper";
 import { issuesPerProductMapper } from "./charts/mappers/issues-per-product.mapper";
 import { issuesPerProduct } from "assets/mocks/issues-per-product";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-dashboard",
@@ -25,7 +26,16 @@ export class DashboardComponent {
   fileInputFormControl: FormControl;
   qualityPieTable: { rows: QualityPieChart[]; headers: string[] };
 
-  constructor() {
+  update(event) {
+    // Run inside angular context
+    this.zone.run(() => {
+      console.log(event);
+      if (event.dataObj.categoryLabel === "PA") {
+        this.router.navigateByUrl("/pa");
+      }
+    });
+  }
+  constructor(private zone: NgZone, private router: Router) {
     this.fileInputFormControl = new FormControl();
     this.boxPlotDataSource = boxPlot;
     this.paretoDataSource = issuesPerProductMapper(issuesPerProduct);
