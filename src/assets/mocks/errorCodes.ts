@@ -1,8 +1,8 @@
-{
-    "errorCodes":[
+export const errorCodesData = {
+    "errorCodes": [
         {
             "product": "PA",
-            "featureName": "",
+            "featureName": "GPS",
             "errors": [
                 {
                     "errorName":"e1",
@@ -19,8 +19,7 @@
                             "date": "dd-MM-YYYY",
                             "stackTrace": ""
                         }
-                    ]
-                    
+                    ]  
                 },
                 {
                     "error":"e2",

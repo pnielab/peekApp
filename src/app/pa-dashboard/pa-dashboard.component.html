@@ -1,3 +1,35 @@
 <div class="main-content">
-  <div class="container-fluid"></div>
+  <div class="container-fluid">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Errors</h4>
+            <p class="card-category">Per feature</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th *ngFor="let header of paretoTable.headers">
+                    {{ header }}
+                  </th>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let product of paretoTable.rows; let i = index">
+                      <tr *ngIf="product.product=='PA'">
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ product.errors[i].errorName }}</td>
+                          <td>{{ product.errors[i].metaData.length }}</td>
+                          <td>{{ product.featureName }}</td>
+                        </tr>
+                      </ng-container> 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
