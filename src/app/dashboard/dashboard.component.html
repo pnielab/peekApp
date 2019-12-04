@@ -1,46 +1,70 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row mb-1">
-            <mat-form-field>
-            <ngx-mat-file-input formControlName="basicfile" placeholder="Choose file..." ></ngx-mat-file-input>
-            <mat-icon matSuffix>folder</mat-icon>
-            </mat-form-field>
+    <div class="row mb-1">
+      <mat-form-field>
+        <ngx-mat-file-input
+          [formControl]="fileInputFormControl"
+          placeholder="Choose file..."
+        ></ngx-mat-file-input>
+        <mat-icon matSuffix>folder</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <fusioncharts type="pareto3d" [dataSource]="paretoDataSource">
+        </fusioncharts>
       </div>
-      <div class="row mb-3">
-        <div class="col-lg-12">
-            <fusioncharts
-                type="pareto3d"
-                width="100%"
-                [dataSource]="paretoDataSource">
-            </fusioncharts>
-        </div>
+      <div class="col-md-6"></div>
     </div>
     <div class="row mb-3">
-        <div class="col-md-12">
-            <fusioncharts
-                type="boxandwhisker2d"
-                width="100%"
-                [dataSource]="boxPlotDataSource">
-            </fusioncharts>
-        </div>
+      <div class="col-md-12">
+        <fusioncharts
+          type="boxandwhisker2d"
+          width="100%"
+          [dataSource]="boxPlotDataSource"
+        >
+        </fusioncharts>
+      </div>
     </div>
     <div class="row mb-3">
-            <div class="col-md-12">
-                    <fusioncharts
-                        type="line"
-                        width="100%"
-                        [dataSource]="lineDataSource">
-                    </fusioncharts>
-                </div>
+      <div class="col-md-12">
+        <fusioncharts type="line" width="100%" [dataSource]="lineDataSource">
+        </fusioncharts>
+      </div>
     </div>
     <div class="row mb-3">
-            <div class="col-md-12">
-                    <fusioncharts
-                        type="pie3d"
-                        width="50%"
-                        [dataSource]="qualityPieChart">
-                    </fusioncharts>
+      <div class="col-md-6">
+        <fusioncharts type="pie3d" [dataSource]="qualityPieChart">
+        </fusioncharts>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Issues per product</h4>
+            <p class="card-category">Here is a subtitle for this table</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th *ngFor="let header of qualityPieTable.headers">
+                    {{ header }}
+                  </th>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let product of qualityPieTable.rows; let i = index"
+                  >
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ product.productName }}</td>
+                    <td>{{ product.quality }}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
