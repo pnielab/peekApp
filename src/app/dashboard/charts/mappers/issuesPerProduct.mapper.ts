@@ -13,5 +13,5 @@ export function issuesPerProductMapper(issuesPerProduct) {
             value: issue.sumOfIssues
         }});
     
-        return paretoDataSource;
+    return paretoDataSource;
 }

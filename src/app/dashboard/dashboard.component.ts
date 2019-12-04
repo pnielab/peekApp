@@ -7,6 +7,8 @@ import { qualityPieChartMapper}  from './charts/mappers/quality-pie.mapper';
 import { qualityPieData } from '../../assets/mocks/quality-pie'
 import { issuesPerProduct } from '../../assets/mocks/issuesPerProduct';
 import { issuesPerProductMapper } from './charts/mappers/issuesPerProduct.mapper';
+import { numberOfIssuesData } from 'assets/mocks/number-of-Issues';
+import { numberOfIssuesMapper } from './charts/mappers/number-of-issues.mapper';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +27,7 @@ export class DashboardComponent  {
     this.basicfile = new FormControl();
     this.boxPlotDataSource = boxPlot;
     this.paretoDataSource = issuesPerProductMapper(issuesPerProduct);
-    this.lineDataSource = lineChart;
+    this.lineDataSource = numberOfIssuesMapper(numberOfIssuesData.numberOfIssues);
     this.qualityPieChart = qualityPieChartMapper(qualityPieData.qualityPie);
   } 
 }
