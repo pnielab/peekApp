@@ -1,0 +1,12 @@
+{
+    "issuesPerUIScreens": [
+        {
+            "pageName": "loginPage",
+            "issueRate": 0.9
+        },
+        {
+            "pageName": "PhysicalDecodingPage",
+            "issueRate": 0.9
+        }
+    ]
+}

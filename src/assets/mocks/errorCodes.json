@@ -1,0 +1,46 @@
+{
+    "errorCodes":[
+        {
+            "product": "PA",
+            "featureName": "",
+            "errors": [
+                {
+                    "error":"e1",
+                    "date": "dd-MM-YYYY",
+                    "sum":15
+                },
+                {
+                    "error":"e2",
+                    "date": "dd-MM-YYYY",
+                    "sum": 23
+                },
+                {
+                    "error":"e3",
+                    "date": "dd-MM-YYYY",
+                    "sum": 266
+                }
+            ]
+        },
+        {
+            "product": "UFED_4PC",
+            "featureName": "",
+            "errors": [
+                {
+                    "error":"e1",
+                    "date": "dd-MM-YYYY",
+                    "sum":15
+                },
+                {
+                    "error":"e2",
+                    "date": "dd-MM-YYYY",
+                    "sum": 23
+                },
+                {
+                    "error":"e3",
+                    "date": "dd-MM-YYYY",
+                    "sum": 266
+                }
+            ]
+        }
+    ]
+}

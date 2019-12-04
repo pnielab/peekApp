@@ -1,0 +1,14 @@
+{
+    "qualityCake": [
+        {
+            "productName": "PA",
+            "quality": 0.8,
+            "sum": 50
+        },
+        {
+            "productName": "UFED_4PC",
+            "quality": 0.8,
+            "sum": 600
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "numberOfIssues": [
+        {
+            "issueNumber": 2,
+            "date": "dd-MM-YYYY",
+            "sum": 10
+        },
+        {
+            "issueNumber": 6,
+            "date": "dd-MM-YYYY",
+            "sum": 10
+        },
+        {
+            "issueNumber": 7,
+            "date": "dd-MM-YYYY",
+            "sum": 10
+        }
+    ]
+}

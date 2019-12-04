@@ -1,0 +1,14 @@
+{
+    "leadingFeatures": [
+        {
+            "featureName": "",
+            "weight": 50,
+            "sum": 200
+        },
+        {
+            "featureName": "",
+            "weight": 20,
+            "sum": 50
+        }
+    ]
+}
