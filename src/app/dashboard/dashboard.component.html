@@ -34,14 +34,22 @@
     </div>
     <div class="row mb-3">
       <div class="col-md-6">
-        <fusioncharts type="pie3d" [dataSource]="qualityPieChart">
-        </fusioncharts>
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Quality</h4>
+            <p class="card-category">Per product</p>
+          </div>
+          <div class="card-body">
+            <fusioncharts type="pie2d" [dataSource]="qualityPieChart">
+            </fusioncharts>
+          </div>
+        </div>
       </div>
       <div class="col-md-6">
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title ">Issues per product</h4>
-            <p class="card-category">Here is a subtitle for this table</p>
+            <h4 class="card-title ">Quality</h4>
+            <p class="card-category">Per product</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
