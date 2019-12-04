@@ -1,13 +1,16 @@
 export function issuesPerProductMapper(issuesPerProduct) {
   return {
     chart: {
-      xaxisname: "Product",
-      yaxisname: "Number of occurensess",
-      theme: "fusion",
-      plottooltext: "$label reported <b>$datavalue</b> issues",
-
+      xaxisname: 'Product',
+      yaxisname: 'Number of occurensess',
+      theme: 'fusion',
+      plottooltext: '$label reported <b>$datavalue</b> issues',
       plotSpacePercent: 0,
-      stack100percent: 1
+      stack100Percent: 1,
+      decimals: 1,
+      showPercentInTooltip: 0,
+      showValues: 1,
+      showPercentValues: 0,
     },
     data: issuesPerProduct.issuesPerProduct.map(issue => {
       return {
