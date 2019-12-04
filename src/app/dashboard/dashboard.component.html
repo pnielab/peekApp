@@ -1,6 +1,12 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
+            <mat-form-field>
+            <ngx-mat-file-input formControlName="basicfile" placeholder="Basic Input" ></ngx-mat-file-input>
+            <mat-icon matSuffix>folder</mat-icon>
+            </mat-form-field>
+      </div>
+      <div class="row mb-3">
         <div class="col-lg-12">
             <fusioncharts
                 type="pareto3d"
@@ -9,7 +15,7 @@
             </fusioncharts>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-md-12">
             <fusioncharts
                 type="boxandwhisker2d"
@@ -18,7 +24,7 @@
             </fusioncharts>
         </div>
     </div>
-    <div clsas="row">
+    <div class="row mb-3">
             <div class="col-md-12">
                     <fusioncharts
                         type="line"
@@ -27,6 +33,14 @@
                     </fusioncharts>
                 </div>
     </div>
-
+    <div class="row mb-3">
+            <div class="col-md-12">
+                    <fusioncharts
+                        type="pie3d"
+                        width="100%"
+                        [dataSource]="lineDataSource">
+                    </fusioncharts>
+            </div>
+    </div>
   </div>
 </div>

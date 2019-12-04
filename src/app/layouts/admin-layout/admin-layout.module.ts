@@ -16,6 +16,8 @@ import * as FusionCharts from "fusioncharts";
 import * as Charts from "fusioncharts/fusioncharts.charts";
 import * as PowerCharts from 'fusioncharts/fusioncharts.powercharts';
 import * as FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+
 import {
   MatButtonModule,
   MatInputModule,
@@ -24,9 +26,11 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material'; 
+import { MatIconModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
+    MaterialFileInputModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     ReactiveFormsModule,
@@ -35,6 +39,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatIconModule,
     MatTooltipModule,
     FusionChartsModule.forRoot(FusionCharts,PowerCharts, Charts, FusionTheme)
   ],
