@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 import { boxPlot } from "./charts/box-plot";
-import { paretoChart } from "./charts/pareto";
-import { lineChart } from "./charts/line";
 import { FormControl } from "@angular/forms";
 import { qualityPieChartMapper } from "./charts/mappers/quality-pie.mapper";
 import {
   qualityPieData,
   QualityPieChart
 } from "../../assets/mocks/quality-pie";
-import { issuesPerProduct } from "../../assets/mocks/issues-per-product";
+import { numberOfIssuesData } from "assets/mocks/number-of-Issues";
+import { numberOfIssuesMapper } from "./charts/mappers/number-of-issues.mapper";
 import { issuesPerProductMapper } from "./charts/mappers/issues-per-product.mapper";
+import { issuesPerProduct } from "assets/mocks/issues-per-product";
 
 @Component({
   selector: "app-dashboard",
@@ -28,12 +28,14 @@ export class DashboardComponent {
     this.fileInputFormControl = new FormControl();
     this.boxPlotDataSource = boxPlot;
     this.paretoDataSource = issuesPerProductMapper(issuesPerProduct);
-    this.lineDataSource = lineChart;
     this.qualityPieTable = {
       rows: qualityPieData.qualityPie,
       headers: ["ID", "Product", "Quality"]
     };
+    this.qualityPieChart = qualityPieChartMapper(qualityPieData.qualityPie);
 
-    this.qualityPieChart = qualityPieChartMapper(this.qualityPieTable.rows);
+    this.lineDataSource = numberOfIssuesMapper(
+      numberOfIssuesData.numberOfIssues
+    );
   }
 }
