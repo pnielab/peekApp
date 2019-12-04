@@ -1,8 +1,8 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">
+      <div class="row mb-1">
             <mat-form-field>
-            <ngx-mat-file-input formControlName="basicfile" placeholder="Basic Input" ></ngx-mat-file-input>
+            <ngx-mat-file-input formControlName="basicfile" placeholder="Choose file..." ></ngx-mat-file-input>
             <mat-icon matSuffix>folder</mat-icon>
             </mat-form-field>
       </div>
@@ -37,8 +37,8 @@
             <div class="col-md-12">
                     <fusioncharts
                         type="pie3d"
-                        width="100%"
-                        [dataSource]="lineDataSource">
+                        width="50%"
+                        [dataSource]="qualityPieChart">
                     </fusioncharts>
             </div>
     </div>
