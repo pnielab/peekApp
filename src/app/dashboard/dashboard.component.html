@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+            <fusioncharts
+                type="pareto3d"
+                width="100%"
+                [dataSource]="paretoDataSource">
+            </fusioncharts>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <fusioncharts
+                type="boxandwhisker2d"
+                dataFormat="json"
+                width="100%"
+                [dataSource]="boxPlotDataSource">
+            </fusioncharts>
+        </div>
+    </div>
+            <div class="col-md-12">
+                <fusioncharts
+                    type="line"
+                    dataFormat="json"
+                    width="100%"
+                    [dataSource]="lineDataSource">
+                </fusioncharts>
+            </div>
+  </div>
+</div>
