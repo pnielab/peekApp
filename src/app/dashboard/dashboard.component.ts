@@ -8,6 +8,7 @@ import {
 } from "../../assets/mocks/quality-pie";
 import { numberOfIssuesMapper } from "./charts/mappers/number-of-issues.mapper";
 import { issuesPerProductMapper } from "./charts/mappers/issues-per-product.mapper";
+import { issuesPerProduct } from "assets/mocks/issues-per-product";
 import { Router } from "@angular/router";
 import { DashboardService } from "./dashboard.service";
 
@@ -53,29 +54,15 @@ export class DashboardComponent {
       });
     this.fileInputFormControl = new FormControl();
     this.boxPlotDataSource = boxPlot;
-
+    this.paretoDataSource = issuesPerProductMapper(issuesPerProduct);
+    this.paretoTable = {
+      rows: issuesPerProduct.issuesPerProduct,
+      headers: ["ID", "Product", "Issues"]
+    };
     this.qualityPieTable = {
       rows: qualityPieData.qualityPie,
       headers: ["ID", "Product", "Quality"]
     };
     this.qualityPieChart = qualityPieChartMapper(qualityPieData.qualityPie);
-  }
-
-  update(event) {
-    // Run inside angular context
-    this.zone.run(() => {
-      console.log(event);
-      if (event.dataObj.categoryLabel === "PA") {
-        this.router.navigateByUrl("/pa");
-      }
-    });
-  }
-
-  fileChangeEvent(event) {
-    setTimeout(() => (this.showParetoDataSource = true), 500);
-    setTimeout(() => (this.showParetoTable = true), 1500);
-    setTimeout(() => (this.showQualityPieChart = true), 2500);
-    setTimeout(() => (this.showQuantityPieTable = true), 3500);
-    setTimeout(() => (this.showLineChart = true), 4500);
   }
 }

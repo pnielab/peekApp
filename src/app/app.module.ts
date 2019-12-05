@@ -18,10 +18,10 @@ import { MapsComponent } from "./maps/maps.component";
 import { NotificationsComponent } from "./notifications/notifications.component";
 import { UpgradeComponent } from "./upgrade/upgrade.component";
 
-import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
-import { PAErrorDialogComponent } from "./pa-dashboard/pa-error-dialog/pa-error-dialog.component";
-import { MatDialogModule } from "@angular/material";
-import { HttpClientModule } from "@angular/common/http";
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { PAErrorDialogComponent } from './pa-dashboard/pa-error-dialog/pa-error-dialog.component';
+import { MatDialogModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -32,7 +32,8 @@ import { HttpClientModule } from "@angular/common/http";
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   entryComponents: [PAErrorDialogComponent],
   declarations: [AppComponent, AdminLayoutComponent, PAErrorDialogComponent],

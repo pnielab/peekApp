@@ -27,7 +27,6 @@ import {
   MatSelectModule
 } from "@angular/material";
 import { MatIconModule } from "@angular/material";
-import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   imports: [
     CommonModule,
@@ -36,7 +35,6 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    HttpClientModule,
     MatRippleModule,
     MatFormFieldModule,
     MatInputModule,

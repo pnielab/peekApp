@@ -3,13 +3,13 @@
     <div class="row mb-1">
       <mat-form-field>
         <ngx-mat-file-input
-          (change)="fileChangeEvent($event)"
+          [formControl]="fileInputFormControl"
           placeholder="Choose file..."
         ></ngx-mat-file-input>
         <mat-icon matSuffix>folder</mat-icon>
       </mat-form-field>
     </div>
-    <div class="row mb-3" *ngIf="showParetoDataSource">
+    <div class="row mb-3">
       <div class="col-md-6">
         <div class="card">
           <div class="card-header card-header-warning">
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6" *ngIf="showParetoTable">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header card-header-warning">
             <h4 class="card-title ">Issues</h4>
@@ -81,7 +81,7 @@
       </div>
     </div> -->
 
-    <div class="row mb-3" *ngIf="showQualityPieChart">
+    <div class="row mb-3">
       <div class="col-md-6">
         <div class="card">
           <div class="card-header card-header-warning">
@@ -94,7 +94,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6" *ngIf="showQuantityPieTable">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header card-header-warning">
             <h4 class="card-title ">Quality</h4>
