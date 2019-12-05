@@ -18,7 +18,7 @@ export class PADashboardComponent implements OnInit {
    this.http.get('http://10.9.8.38:3300/v1/report/feature/issues').subscribe((res: any) => {
     this.paretoTable = {
       rows: res.errorCodes,
-      headers: ['ID', 'Error', 'Number of occurrences', 'Feature']
+      headers: ['ID', 'Error', 'Number of occurrences']
     };
    });
   }
