@@ -60,4 +60,14 @@ export class DashboardComponent {
     };
     this.qualityPieChart = qualityPieChartMapper(qualityPieData.qualityPie);
   }
+
+  update(event) {
+    // Run inside angular context
+    this.zone.run(() => {
+      console.log(event);
+      if (event.dataObj.categoryLabel === "PA") {
+        this.router.navigateByUrl("/pa");
+      }
+    });
+  }
 }
