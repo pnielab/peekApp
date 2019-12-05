@@ -1,7 +1,7 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row mb-3">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-warning">
             <h4 class="card-title ">Errors</h4>
@@ -17,25 +17,43 @@
                 </thead>
                 <tbody>
                   <ng-container
-                    *ngFor="let error of paretoTable.rows; let i = index">
+                    *ngFor="let error of paretoTable.rows; let i = index"
+                  >
                     <!-- <div *ngIf="error.product == 'PA'"> -->
-                        <tr *ngFor="let featureError of error.errors">
-                            <td>{{ i + 1 }}</td>
-                            <td>
-                              <a
-                                class="clickable"
-                                role="button"
-                                (click)="errorEventClick(featureError)"
-                                >{{ featureError.errorName }}</a>
-                            </td>
-                            <td>{{ featureError.metaData.length }}
-                            </td>
-                      </tr>
+                    <tr *ngFor="let featureError of error.errors">
+                      <td>{{ i + 1 }}</td>
+                      <td>
+                        <a
+                          class="clickable"
+                          role="button"
+                          (click)="errorEventClick(featureError)"
+                          >{{ featureError.errorName }}</a
+                        >
+                      </td>
+                      <td>{{ featureError.metaData.length }}</td>
+                    </tr>
                     <!-- </div>  -->
                   </ng-container>
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-warning">
+            <h4 class="card-title ">Issues by version</h4>
+          </div>
+          <div class="card-body">
+            <fusioncharts
+              type="boxandwhisker2d"
+              width="100%"
+              [dataSource]="boxPlotDataSource"
+            >
+            </fusioncharts>
           </div>
         </div>
       </div>

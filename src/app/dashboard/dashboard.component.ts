@@ -1,5 +1,4 @@
 import { Component, OnInit, NgZone } from "@angular/core";
-import { boxPlot } from "./charts/box-plot";
 import { FormControl } from "@angular/forms";
 import { qualityPieChartMapper } from "./charts/mappers/quality-pie.mapper";
 import {
@@ -53,7 +52,6 @@ export class DashboardComponent {
         );
       });
     this.fileInputFormControl = new FormControl();
-    this.boxPlotDataSource = boxPlot;
     this.qualityPieTable = {
       rows: qualityPieData.qualityPie,
       headers: ["ID", "Product", "Quality"]
