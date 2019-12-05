@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { errorCodesData } from 'assets/mocks/errorCodes';
 import { MatDialog } from '@angular/material';
 import { PAErrorDialogComponent } from './pa-error-dialog/pa-error-dialog.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-pa-dashboard',
@@ -9,24 +10,20 @@ import { PAErrorDialogComponent } from './pa-error-dialog/pa-error-dialog.compon
   styleUrls: ['./pa-dashboard.component.css']
 })
 export class PADashboardComponent implements OnInit {
-  boxPlotDataSource: {};
-  paretoDataSource: {};
   paretoTable: {};
-  lineDataSource: {};
-  qualityPieChart: {};
-
-  constructor(private dialog: MatDialog) {}
+  
+  constructor(private dialog: MatDialog, private http: HttpClient) {}
 
   ngOnInit(): void {
+   this.http.get('http://10.9.8.38:3300/v1/report/feature/issues').subscribe((res: any) => {
     this.paretoTable = {
-      rows: errorCodesData.errorCodes,
+      rows: res.errorCodes,
       headers: ['ID', 'Error', 'Number of occurrences', 'Feature']
     };
+   });
   }
 
   public errorEventClick(data) {
-    console.log('inside error event');
-     console.log(data);
     this.dialog.open(PAErrorDialogComponent, {
       data,
       height: '400px',

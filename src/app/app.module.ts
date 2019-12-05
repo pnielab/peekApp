@@ -21,6 +21,7 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { PAErrorDialogComponent } from './pa-dashboard/pa-error-dialog/pa-error-dialog.component';
 import { MatDialogModule } from '@angular/material';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { MatDialogModule } from '@angular/material';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   entryComponents: [
     PAErrorDialogComponent
