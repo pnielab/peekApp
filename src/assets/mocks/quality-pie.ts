@@ -6,7 +6,7 @@ export const qualityPieData = {
       sum: 200
     },
     {
-      productName: "UFED_4PC",
+      productName: "UFED 4PC",
       quality: 0.8,
       sum: 800
     }

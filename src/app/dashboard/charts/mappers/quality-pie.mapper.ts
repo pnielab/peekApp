@@ -16,12 +16,12 @@ export function qualityPieChartMapper(qualityPieCharts: QualityPieChart[]) {
       {
         value: weightedAverege,
         label: "",
-        color: "#00FF00"
+        color: "#28a745"
       },
       {
         value: 1 - weightedAverege,
         label: "",
-        color: "#FF0000"
+        color: "#dc3545"
       }
     ]
   };

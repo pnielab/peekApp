@@ -1,58 +1,56 @@
 {
-    "softwareUpdateQualityOverTime":[
+  "softwareUpdateQualityOverTime": [
+    {
+      "version": "7.14.0.0",
+      "product": "PA",
+      "features": [
         {
-            "version": "7.14.0.0",
-            "product": "PA",
-            "features": [
-                {
-                    "featureName": "GPS",
-                    "qaulity": 0.9
-                },
-                {
-                    "featureName": "iPhone",
-                    "qaulity": 0.5
-                },
-                {
-                    "featureName": "Other_Plugins",
-                    "qaulity": 0.4
-                },
-                {
-                    "featureName": "PhysicalDecoding",
-                    "qaulity": 0.8
-                }
-            ]
-
+          "featureName": "GPS",
+          "qaulity": 0.9
         },
         {
-            "version": "7.13.0.0",
-            "product": "UFED_4PC",
-            "features": [
-                {
-                    "featureName": "PhysicalDump",
-                    "qaulity": 0.9
-                },
-                {
-                    "featureName": "ExtractPhone",
-                    "qaulity": 0.5
-                },
-                {
-                    "featureName": "ExtractPassword",
-                    "qaulity": 0.9
-                },
-                {
-                    "featureName": "CloneSim",
-                    "qaulity": 0.7
-                },
-                {
-                    "featureName": "FileSystemDump",
-                    "qaulity": 0.4
-                },
-                {
-                    "featureName": "ExtractSim",
-                    "qaulity": 0.8
-                }
-            ]
-
+          "featureName": "iPhone",
+          "qaulity": 0.5
+        },
+        {
+          "featureName": "Other_Plugins",
+          "qaulity": 0.4
+        },
+        {
+          "featureName": "PhysicalDecoding",
+          "qaulity": 0.8
         }
-    ]
+      ]
+    },
+    {
+      "version": "7.13.0.0",
+      "product": "UFED 4PC",
+      "features": [
+        {
+          "featureName": "PhysicalDump",
+          "qaulity": 0.9
+        },
+        {
+          "featureName": "ExtractPhone",
+          "qaulity": 0.5
+        },
+        {
+          "featureName": "ExtractPassword",
+          "qaulity": 0.9
+        },
+        {
+          "featureName": "CloneSim",
+          "qaulity": 0.7
+        },
+        {
+          "featureName": "FileSystemDump",
+          "qaulity": 0.4
+        },
+        {
+          "featureName": "ExtractSim",
+          "qaulity": 0.8
+        }
+      ]
+    }
+  ]
 }

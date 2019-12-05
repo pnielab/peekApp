@@ -12,7 +12,7 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header card-header-danger">
+          <div class="card-header card-header-warning">
             <h4 class="card-title ">Issues</h4>
             <p class="card-category">Per product</p>
           </div>
@@ -28,7 +28,7 @@
       </div>
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header card-header-danger">
+          <div class="card-header card-header-warning">
             <h4 class="card-title ">Issues</h4>
             <p class="card-category">Per product</p>
           </div>
@@ -57,7 +57,7 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header card-header-danger">
+          <div class="card-header card-header-warning">
             <h4 class="card-title ">Quality</h4>
             <p class="card-category">Per product</p>
           </div>
@@ -69,7 +69,7 @@
       </div>
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header card-header-danger">
+          <div class="card-header card-header-warning">
             <h4 class="card-title ">Quality</h4>
             <p class="card-category">Per product</p>
           </div>
@@ -98,8 +98,19 @@
     </div>
     <div class="row mb-3">
       <div class="col-md-12">
-        <fusioncharts type="line" width="100%" [dataSource]="lineDataSource">
-        </fusioncharts>
+        <div class="card">
+          <div class="card-header card-header-warning">
+            <h4 class="card-title ">Total issues</h4>
+          </div>
+          <div class="card-body">
+            <fusioncharts
+              type="line"
+              width="100%"
+              [dataSource]="lineDataSource"
+            >
+            </fusioncharts>
+          </div>
+        </div>
       </div>
     </div>
     <!-- <div class="row mb-3">

@@ -3,7 +3,7 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <div class="card">
-          <div class="card-header card-header-danger">
+          <div class="card-header card-header-warning">
             <h4 class="card-title ">Errors</h4>
             <p class="card-category">Per feature</p>
           </div>
@@ -16,14 +16,16 @@
                   </th>
                 </thead>
                 <tbody>
-                  <ng-container *ngFor="let product of paretoTable.rows; let i = index">
-                      <tr *ngIf="product.product=='PA'">
-                          <td>{{ i + 1 }}</td>
-                          <td>{{ product.errors[i].errorName }}</td>
-                          <td>{{ product.errors[i].metaData.length }}</td>
-                          <td>{{ product.featureName }}</td>
-                        </tr>
-                      </ng-container> 
+                  <ng-container
+                    *ngFor="let product of paretoTable.rows; let i = index"
+                  >
+                    <tr *ngIf="product.product == 'PA'">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ product.errors[i].errorName }}</td>
+                      <td>{{ product.errors[i].metaData.length }}</td>
+                      <td>{{ product.featureName }}</td>
+                    </tr>
+                  </ng-container>
                 </tbody>
               </table>
             </div>
