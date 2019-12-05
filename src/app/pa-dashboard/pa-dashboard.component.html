@@ -16,12 +16,14 @@
                   </th>
                 </thead>
                 <tbody>
-                  <ng-container *ngFor="let product of paretoTable.rows; let i = index">
-                      <tr *ngIf="product.product=='PA'">
+                  <ng-container *ngFor="let error of paretoTable.rows; let i = index">
+                      <tr *ngIf="error.product=='PA'">
                           <td>{{ i + 1 }}</td>
-                          <td>{{ product.errors[i].errorName }}</td>
-                          <td>{{ product.errors[i].metaData.length }}</td>
-                          <td>{{ product.featureName }}</td>
+                          <td>
+                            <a class="clickable" role="button" (click)="errorEventClick(error.errors[i])">{{ error.errors[i].errorName }}</a>
+                            </td>
+                          <td>{{ error.errors[i].metaData.length }}</td>
+                          <td>{{ error.featureName }}</td>
                         </tr>
                       </ng-container> 
                 </tbody>

@@ -1,0 +1,7 @@
+<div class="dialog-container">
+  <h3>Error name: {{data.errorName}}</h3><br><br>
+  <div *ngFor="let error of data.metaData">
+    <span>Date: {{error.date}}</span><br>
+    <span>Stack trace: {{error.stackTrace}}</span><br><br><br>
+  </div>
+</div>
