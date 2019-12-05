@@ -6,7 +6,6 @@ import {
   qualityPieData,
   QualityPieChart
 } from "../../assets/mocks/quality-pie";
-import { numberOfIssuesData } from "assets/mocks/number-of-Issues";
 import { numberOfIssuesMapper } from "./charts/mappers/number-of-issues.mapper";
 import { issuesPerProductMapper } from "./charts/mappers/issues-per-product.mapper";
 import { Router } from "@angular/router";
@@ -45,6 +44,13 @@ export class DashboardComponent {
           headers: ["ID", "Product", "Issues"]
         };
       });
+    this.dashboardService
+      .getNumberOfIssues()
+      .subscribe((numberOfIssues: any) => {
+        this.lineDataSource = numberOfIssuesMapper(
+          numberOfIssues.numberOfIssues
+        );
+      });
     this.fileInputFormControl = new FormControl();
     this.boxPlotDataSource = boxPlot;
 
@@ -53,10 +59,6 @@ export class DashboardComponent {
       headers: ["ID", "Product", "Quality"]
     };
     this.qualityPieChart = qualityPieChartMapper(qualityPieData.qualityPie);
-
-    this.lineDataSource = numberOfIssuesMapper(
-      numberOfIssuesData.numberOfIssues
-    );
   }
 
   update(event) {

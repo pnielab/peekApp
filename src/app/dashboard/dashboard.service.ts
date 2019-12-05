@@ -10,4 +10,8 @@ export class DashboardService {
   getIssuesPerProduct() {
     return this.http.get("http://10.9.220.133:3300/v1/report/product/issues");
   }
+
+  getNumberOfIssues() {
+    return this.http.get("http://10.9.220.133:3300/v1/report/issues/number");
+  }
 }
