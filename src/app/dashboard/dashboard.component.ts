@@ -9,8 +9,8 @@ import {
 import { numberOfIssuesData } from "assets/mocks/number-of-Issues";
 import { numberOfIssuesMapper } from "./charts/mappers/number-of-issues.mapper";
 import { issuesPerProductMapper } from "./charts/mappers/issues-per-product.mapper";
-import { issuesPerProduct } from "assets/mocks/issues-per-product";
 import { Router } from "@angular/router";
+import { DashboardService } from "./dashboard.service";
 
 @Component({
   selector: "app-dashboard",
@@ -18,6 +18,11 @@ import { Router } from "@angular/router";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent {
+  showParetoDataSource = true;
+  showParetoTable = true;
+  showQualityPieChart = true;
+  showQuantityPieTable = true;
+  showLineChart = true;
   boxPlotDataSource: {};
   paretoDataSource: {};
   paretoTable: {};
@@ -25,6 +30,34 @@ export class DashboardComponent {
   qualityPieChart: {};
   fileInputFormControl: FormControl;
   qualityPieTable: { rows: QualityPieChart[]; headers: string[] };
+
+  constructor(
+    private zone: NgZone,
+    private router: Router,
+    private dashboardService: DashboardService
+  ) {
+    this.dashboardService
+      .getIssuesPerProduct()
+      .subscribe((issuesPerProduct: any) => {
+        this.paretoDataSource = issuesPerProductMapper(issuesPerProduct);
+        this.paretoTable = {
+          rows: issuesPerProduct.issuesPerProduct,
+          headers: ["ID", "Product", "Issues"]
+        };
+      });
+    this.fileInputFormControl = new FormControl();
+    this.boxPlotDataSource = boxPlot;
+
+    this.qualityPieTable = {
+      rows: qualityPieData.qualityPie,
+      headers: ["ID", "Product", "Quality"]
+    };
+    this.qualityPieChart = qualityPieChartMapper(qualityPieData.qualityPie);
+
+    this.lineDataSource = numberOfIssuesMapper(
+      numberOfIssuesData.numberOfIssues
+    );
+  }
 
   update(event) {
     // Run inside angular context
@@ -35,22 +68,12 @@ export class DashboardComponent {
       }
     });
   }
-  constructor(private zone: NgZone, private router: Router) {
-    this.fileInputFormControl = new FormControl();
-    this.boxPlotDataSource = boxPlot;
-    this.paretoDataSource = issuesPerProductMapper(issuesPerProduct);
-    this.paretoTable = {
-      rows: issuesPerProduct.issuesPerProduct,
-      headers: ["ID", "Product", "Issues"]
-    };
-    this.qualityPieTable = {
-      rows: qualityPieData.qualityPie,
-      headers: ["ID", "Product", "Quality"]
-    };
-    this.qualityPieChart = qualityPieChartMapper(qualityPieData.qualityPie);
 
-    this.lineDataSource = numberOfIssuesMapper(
-      numberOfIssuesData.numberOfIssues
-    );
+  fileChangeEvent(event) {
+    setTimeout(() => (this.showParetoDataSource = true), 500);
+    setTimeout(() => (this.showParetoTable = true), 1500);
+    setTimeout(() => (this.showQualityPieChart = true), 2500);
+    setTimeout(() => (this.showQuantityPieTable = true), 3500);
+    setTimeout(() => (this.showLineChart = true), 4500);
   }
 }

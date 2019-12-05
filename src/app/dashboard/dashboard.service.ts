@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class DashboardService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getIssuesPerProduct() {
+    return this.http.get("http://10.9.220.133:3300/v1/report/product/issues");
+  }
 }
