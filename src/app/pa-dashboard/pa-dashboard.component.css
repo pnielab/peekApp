@@ -1,3 +1,16 @@
 .clickable {
     cursor: pointer;
+    /* color: blue !important;
+    text-decoration: underline !important; */
 }
+
+[role="button"] {
+    color: green !important;
+    
+  }
+  [role="button"]:hover,
+  [role="button"]:focus,
+  [role="button"]:active {   
+     background-color: white;
+     color: navy;
+  } 
